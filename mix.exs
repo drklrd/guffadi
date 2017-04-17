@@ -15,7 +15,7 @@ defmodule Slackbot.Mixfile do
   # Type "mix help compile.app" for more information
   def application do
     # Specify extra applications you'll use from Erlang/Elixir
-    [extra_applications: [:logger,:websocket_client, :slack],
+    [extra_applications: [:logger,:websocket_client, :slack,:httpoison],
      mod: {Slackbot.Application, []}]
   end
 
@@ -31,7 +31,9 @@ defmodule Slackbot.Mixfile do
   defp deps do
   [
     {:slack, "~> 0.7.0"},
-    {:websocket_client, git: "https://github.com/jeremyong/websocket_client"}
+    {:websocket_client, git: "https://github.com/jeremyong/websocket_client"},
+    {:httpoison, "~> 0.5"},
+    {:floki, "~> 0.3"}
   ]
 end
 end
